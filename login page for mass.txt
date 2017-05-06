@@ -1,0 +1,73 @@
+package RegisterGRM;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+		public class Login {
+			
+			// public static String driverPath = "C:/selenium-java-2.53.1/";//    F:/lib/chromedriver/"
+			public static WebDriver driver;
+			public static void main(String args[]) throws InterruptedException
+			{
+				/*System.out.println("launching chrome browser");*/
+		        System.setProperty("webdriver.chrome.driver", "C:/selenium-java-2.53.1/chromedriver.exe");
+				ChromeDriver driver = new ChromeDriver();
+				driver.get("http://192.162.0.99:8090/mas_erp");
+				/*driver.manage().window().maximize();	
+		        driver.close();
+		        driver.quit();*/	    
+				//System.setProperty("webdriver.chrome.driver", "C:/selenium-java-2.53.1/chromedriver.exe");
+		        
+		       /* @SuppressWarnings("resource")
+				Scanner in=new Scanner(System.in);
+		        System.out.println("Hi Manikandan ,Welcome to imas");
+		        Thread.sleep(1000);
+		        System.out.println("Which one Do you want login ??Please Select as Follow");
+		        System.out.println("1.2016-2017     2.2017-2018");
+		        driver = new ChromeDriver();*/
+		        
+		      /* if(in.nextInt()==1){
+		    	   driver.navigate().to("http://192.162.0.99:8090/mas_erp");
+		       }else if(in.nextInt()==2){
+		    	   driver.navigate().to("http://http://192.162.0.99:8090/mas_erp");
+		       }*/
+		        
+		       driver.manage().window().maximize();
+		       //System.out.println();
+				
+		       
+		        
+		      try{
+		    	  driver.findElement(By.id("year")).sendKeys("2017-2018"); 
+		        }catch (Exception e) {
+		      	  System.out.println("Exception Arrived on password..");
+		      	  System.out.println(e);
+		        }
+		        driver.findElement(By.name("user_name")).sendKeys("developer");
+		      
+		      
+		      try{
+		    	  driver.findElement(By.className("password-1")).sendKeys("mas2017"); 
+		      }catch (Exception ex) {
+		    	  System.out.println("Exception Arrived on password..");
+		    	  System.out.println(ex);
+		      }finally {		
+		    	  driver.findElement(By.className("password-2")).sendKeys("mas2017");   
+		      } 
+		        
+		        driver.findElement(By.className("btn-raised")).click();
+		        WebElement txtboxUsername = driver.findElement(By.name("username"));
+		        txtboxUsername.sendKeys("developer");
+		        WebElement txtboxPassword = driver.findElement(By.name("Password"));
+		        txtboxPassword.sendKeys("mas2017");	      
+		        WebElement btnLogin = driver.findElement(By.name("LoginView"));
+		        btnLogin.click();
+                Thread.sleep(5000);
+		        driver.close();
+			    driver.quit();
+			}		
+}
