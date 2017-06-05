@@ -1,0 +1,62 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class WebElements 
+{
+	public static void main(String[] arg) 
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\selenium-java-2.53.1\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("http://www.newtours.demoaut.com/");
+		driver.manage().window().maximize();
+		
+		
+		WebElement lnkRegister = driver.findElement(By.linkText("REGISTER"));
+		lnkRegister.click();
+		
+		WebElement txtFirstName =driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/input"));
+		txtFirstName.sendKeys("Manikandan");
+		
+		WebElement txtLastName =driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[3]/td[2]/input"));
+		txtLastName.sendKeys("K");
+		
+		WebElement txtPhone =driver.findElement(By.name("phone"));
+		txtPhone.sendKeys("8870506364");
+		
+		WebElement txtEmail =driver.findElement(By.id("userName"));
+		txtEmail.sendKeys("manikandanak.it@gmail.com");
+		
+		WebElement txtAddress =  driver.findElement(By.xpath("//input[@name='address1']"));
+		txtAddress.sendKeys("Athikanoor");
+		WebElement txtAddress2 = driver.findElement(By.xpath("//input[@name='address2']"));
+		txtAddress2.sendKeys("pochampalli Taluk");
+		
+		WebElement txtCity = driver.findElement(By.name("city"));
+		txtCity.sendKeys("Chennai");
+		
+		WebElement txtStateProvince =driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[10]/td[2]/input"));
+		txtStateProvince.sendKeys("North Chennai");
+		
+		WebElement txtPostalCode = driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[11]/td[2]/input"));
+		txtPostalCode.sendKeys("600 001");
+		
+		WebElement dropdownCountry = driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[12]/td[2]/select"));
+		Select s= new Select(dropdownCountry);
+		s.selectByVisibleText("INDIA");
+		
+		WebElement txtUserName = driver.findElement(By.xpath(".//*[@id='email']"));
+		txtUserName.sendKeys("manikandanak");
+		
+		WebElement  txtPassword = driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input"));
+		txtPassword.sendKeys("mani1987");
+		
+		WebElement txtConfirmPassword = driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[16]/td[2]/input"));
+		txtConfirmPassword.sendKeys("mani1087");
+		
+		WebElement btnSubmit = driver.findElement(By.xpath("//input[@name='register']"));
+		btnSubmit.click();
+		
+	}
+}
