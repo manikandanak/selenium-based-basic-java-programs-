@@ -1,0 +1,39 @@
+URL : http://mirrors.jenkins.io/windows-stable/
+Jenkins Configuration Steps:
+======================================
+1. localhost:8080
+2. Click Manage Jenkins in left panel
+3. Click Configure System
+3. Click jdk installation
+  i)JDK Name  : java_1.8
+  ii)Java_Home : C:\Program Files\Java\jdk1.8.0_77
+4. Download Apache maven from below link:
+https://maven.apache.org/download.cgi
+5.  Click Maven Installation
+    i) Maven Name : Maven_3.3.9
+    ii)Maven_Name :C:\Supporting file for Selenium\apache-maven-3.3.9
+6.Email Notification
+ i) Click Advanced Button
+ ii) SMTP server : smtp.gmail.com
+ iii) Check Use SMTP Authentication
+ iv) User Name : xxx@gmail.com
+  v) Password : XXXXXXXX
+ vi) Check Use SSL
+ vii)SMTP Port : 465
+ viii) Reply-To-Address : noreply@gmail.com
+
+In gmail, https://www.google.com/settings/security/lesssecureapps
+---------------------------------------------------------------------------
+
+Project Configuration
+=================================
+1. Build Triggers - Choose any one the option
+Default opiton is Build whenever a SNAPSHOT dependency is built
+or use can choose Build periodically eg: H 22 * * * (Every day 10 PM)
+
+2. Build
+Root POM : D:\QATraining\Java_Selenium\modular\pom.xml
+
+3. Build Settings
+i) Check Email Notification
+ii) Receipients : xxxx@gmail.com
